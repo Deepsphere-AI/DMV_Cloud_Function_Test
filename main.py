@@ -17,4 +17,4 @@ def hello_http(request):
        name = request_args['name']
    else:
        name = 'World'
-   return 'Helloo {}!'.format(name)
+   return 'Hellooo {}!'.format(name)
