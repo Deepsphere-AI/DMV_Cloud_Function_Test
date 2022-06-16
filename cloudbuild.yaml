@@ -9,3 +9,4 @@ steps:
     - --runtime=python38
     - --entry-point=hello_http
     - --allow-unauthenticated
+    - --region=us-west1
