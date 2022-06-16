@@ -7,4 +7,5 @@ steps:
     - --source=.
     - --trigger-http
     - --runtime=python38
+    - --entry-point=hello_http
     - --allow-unauthenticated
