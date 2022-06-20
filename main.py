@@ -1,3 +1,7 @@
+import os
+print('Start')
+print(os.environ.get("BUCKET_NAME", "Not Found"))
+print('Finish')
 def hello_http(request):
    """HTTP Cloud Function.
    Args:
