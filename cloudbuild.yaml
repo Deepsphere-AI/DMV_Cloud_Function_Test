@@ -3,15 +3,12 @@ steps:
     args:
     - functions
     - deploy
-    - dmv-elp-classification-cicd
+    - dmv-elp-classification-cicd-test
     - --source=.
     - --trigger-http
     - --runtime=python38
     - --entry-point=hello_http
     - --allow-unauthenticated
     - --region=us-west1
-    secretEnv: ['BUCKET_NAME']
-  availableSecrets:
-    secretManager:
-    - versionName: projects/610686863099/secrets/BUCKET_NAME/versions/1
-      env: 'BUCKET_NAME'
+    env: 
+      - 'BUCKET_NAME=projects/610686863099/secrets/BUCKET_NAME/versions/1'
