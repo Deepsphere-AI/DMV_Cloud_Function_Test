@@ -10,6 +10,7 @@ steps:
     - --entry-point=hello_http
     - --allow-unauthenticated
     - --region=us-west1
+    - --set-env-vars "KEY1=VALUE1"
     secretEnv: ['BUCKET_NAME']
 availableSecrets:
   secretManager:
