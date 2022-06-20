@@ -13,5 +13,5 @@ steps:
     secretEnv: ['BUCKET_NAME']
 availableSecrets:
   secretManager:
-  - versionName: projects/610686863099/secrets/BUCKET_NAME/versions/1                 
+  - versionName: projects/elp-2022-352222/secrets/BUCKET_NAME/versions/1              
     env: BUCKET_NAME
