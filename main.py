@@ -49,4 +49,4 @@ def get_gcp_secret():
     aws_access_key = aws_access_key_response.payload.data.decode("UTF-8")
     aws_secret_key = aws_secret_key_response.payload.data.decode("UTF-8")
     bucket_name_value = bucket_name_response.payload.data.decode("UTF-8")
-    return aws_access_key,aws_secret_key
+    return aws_access_key,aws_secret_key,bucket_name_value
