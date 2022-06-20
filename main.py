@@ -1,4 +1,5 @@
 import os
+from google.cloud import secretmanager
 print('Start')
 print(os.environ.get("BUCKET_NAME", "Not Found"))
 print(os.environ.get("KEY1", "Not Found"))
