@@ -37,9 +37,9 @@ def get_gcp_secret():
     client = secretmanager.SecretManagerServiceClient()
     
     # Build the resource name of the secret version.
-    aws_access_key_name =  'ACCESS_KEY'
-    aws_secret_key_name =  'SECRET_KEY'
-    bucket_name =  'BUCKET_NAME'
+    aws_access_key_name =  'projects/elp-2022-352222/secrets/ACCESS_KEY/versions/1'
+    aws_secret_key_name =  'projects/elp-2022-352222/secrets/SECRET_KEY/versions/1'
+    bucket_name =  'projects/elp-2022-352222/secrets/BUCKET_NAME/versions/1'
     
     # Access the secret version.
     aws_access_key_response = client.access_secret_version(request={"name": aws_access_key_name})
