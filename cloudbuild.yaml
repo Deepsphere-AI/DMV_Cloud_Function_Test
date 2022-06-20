@@ -10,5 +10,9 @@ steps:
     - --entry-point=hello_http
     - --allow-unauthenticated
     - --region=us-west1
-    env: 
-      - 'BUCKET_NAME=projects/610686863099/secrets/BUCKET_NAME/versions/1'
+    secretEnv: ['BUCKET_NAME']
+    
+availableSecrets:
+  secretManager:
+  - versionName: projects/610686863099/secrets/BUCKET_NAME/versions/1                 
+    env: BUCKET_NAME
