@@ -37,9 +37,9 @@ def get_gcp_secret():
     client = secretmanager.SecretManagerServiceClient()
     
     # Build the resource name of the secret version.
-    aws_access_key_name =  os.environ.get('ACCESS_KEY','Specified environment variable GCP_SECRET_AWS_ACCESS_KEY is not set.')
-    aws_secret_key_name =  os.environ.get('SECRET_KEY','Specified environment variable GCP_SECRET_AWS_SECRET_KEY is not set.')
-    bucket_name =  os.environ.get('BUCKET_NAME','Specified environment variable BUCKET_NAME is not set.')
+    aws_access_key_name =  'ACCESS_KEY'
+    aws_secret_key_name =  'SECRET_KEY'
+    bucket_name =  'BUCKET_NAME'
     
     # Access the secret version.
     aws_access_key_response = client.access_secret_version(request={"name": aws_access_key_name})
