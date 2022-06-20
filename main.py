@@ -30,7 +30,6 @@ def hello_http(request):
    return 'Hello {}!'.format(name)
 
 
-
 def get_gcp_secret():
 
     # Create the Secret Manager client.
