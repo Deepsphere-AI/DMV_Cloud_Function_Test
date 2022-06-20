@@ -22,4 +22,31 @@ def hello_http(request):
        name = request_args['name']
    else:
        name = 'Deepsphere!!!!'
+       k1,k2,k3 = get_gcp_secret()
+       print('Secret Values1 - ',k1)
+       print('Secret Values2 - ',k2)
+       print('Secret Values3 - ',k3)
    return 'Hello {}!'.format(name)
+
+
+
+def get_gcp_secret():
+
+    # Create the Secret Manager client.
+    client = secretmanager.SecretManagerServiceClient()
+    
+    # Build the resource name of the secret version.
+    aws_access_key_name =  os.environ.get('ACCESS_KEY','Specified environment variable GCP_SECRET_AWS_ACCESS_KEY is not set.')
+    aws_secret_key_name =  os.environ.get('SECRET_KEY','Specified environment variable GCP_SECRET_AWS_SECRET_KEY is not set.')
+    bucket_name =  os.environ.get('BUCKET_NAME','Specified environment variable BUCKET_NAME is not set.')
+    
+    # Access the secret version.
+    aws_access_key_response = client.access_secret_version(request={"name": aws_access_key_name})
+    aws_secret_key_response = client.access_secret_version(request={"name": aws_secret_key_name})
+    bucket_name_response = client.access_secret_version(request={"name": bucket_name})
+    # WARNING: Do not print the secret in a production environment - this
+    # snippet is showing how to access the secret material.
+    aws_access_key = aws_access_key_response.payload.data.decode("UTF-8")
+    aws_secret_key = aws_secret_key_response.payload.data.decode("UTF-8")
+    bucket_name_value = bucket_name_response.payload.data.decode("UTF-8")
+    return aws_access_key,aws_secret_key
